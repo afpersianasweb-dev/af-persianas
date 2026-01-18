@@ -24,9 +24,8 @@ const Home = () => {
             />
             {/* Hero Section */}
             <section className="relative min-h-screen flex items-center justify-center bg-neutral-900 text-white overflow-hidden py-20">
-                {/* Abstract Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 via-primary-dark to-neutral-800 opacity-90 z-0"></div>
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-40 mix-blend-overlay z-0"></div>
+                {/* Natural Background - No overlay */}
+                <div className="absolute inset-0 bg-[url('/hero-natural.jpg')] bg-cover bg-center z-0"></div>
 
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full my-auto">
                     <motion.div
@@ -44,12 +43,17 @@ const Home = () => {
                             />
                         </div>
 
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight px-4">
-                            Elegancia que <span className="text-secondary">Transforma</span> <br /> Tus Espacios
-                        </h1>
-                        <p className="text-base sm:text-lg md:text-xl text-neutral-200 max-w-2xl mx-auto font-light px-4">
-                            Transformamos hogares y oficinas en ambientes estéticos, funcionales y confortables.
-                        </p>
+                        {/* Text Container with Dark Background */}
+                        <div className="bg-neutral-900/55 rounded-3xl p-6 md:p-8 max-w-4xl mx-auto">
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight px-4 drop-shadow-lg mb-4">
+                                Elegancia que <span className="text-secondary">Transforma</span> <br /> Tus Espacios
+                            </h1>
+                            <p className="text-base sm:text-lg md:text-xl text-neutral-100 max-w-2xl mx-auto font-light px-4 drop-shadow-md">
+                                Transformamos hogares y oficinas en ambientes estéticos, funcionales y confortables.
+                            </p>
+                        </div>
+
+                        {/* Buttons without background */}
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 px-4">
                             <Button to="/catalogo" variant="primary" className="text-base md:text-lg px-6 md:px-8 py-3 md:py-4 w-full sm:w-auto shadow-xl">
                                 Ver Colección

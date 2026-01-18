@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Plus, LogOut, Shield, ShieldAlert } from 'lucide-react';
+import { Plus, LogOut, Shield } from 'lucide-react';
 import Button from '../../components/Button';
 import { useCatalog } from '../../context/CatalogContext';
 import { useAuth } from '../../context/AuthContext';
@@ -8,7 +8,7 @@ import CategoryForm from './components/CategoryForm';
 import CategoryList from './components/CategoryList';
 
 const Dashboard = () => {
-    const { categories, addCategory, deleteCategory, updateCategory, setProtectionEnabled, protectionEnabled } = useCatalog();
+    const { categories, addCategory, deleteCategory, updateCategory } = useCatalog();
     const { logout } = useAuth();
     const navigate = useNavigate();
     const [isEditing, setIsEditing] = useState(null);
@@ -82,15 +82,7 @@ const Dashboard = () => {
                         <Shield className="w-8 h-8 text-primary mr-3" />
                         Panel Administrativo
                     </h1>
-                    <div className="flex items-center space-x-4">
-                        <Button
-                            onClick={() => setProtectionEnabled(prev => !prev)}
-                            variant="outline"
-                            className={`text-sm transition-colors ${protectionEnabled ? 'bg-green-50 text-green-700 border-green-200 hover:bg-green-100' : 'bg-red-50 text-red-700 border-red-200 hover:bg-red-100'}`}
-                        >
-                            {protectionEnabled ? <Shield className="w-4 h-4 mr-2" /> : <ShieldAlert className="w-4 h-4 mr-2" />}
-                            {protectionEnabled ? 'Sitio Protegido' : 'Protección Inactiva'}
-                        </Button>
+                    <div className="flex items-center">
                         <button onClick={handleLogout} className="text-gray-500 hover:text-red-600 flex items-center">
                             <LogOut className="w-5 h-5 mr-1" /> Salir
                         </button>

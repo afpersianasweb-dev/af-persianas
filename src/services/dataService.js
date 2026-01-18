@@ -21,11 +21,21 @@ export const dataService = {
         await delay(300); // Simulate network latency
         try {
             const saved = localStorage.getItem(STORAGE_KEY);
-            if (!saved) return initialCategories;
+            if (!saved) {
+                // Si no existe, guardamos las categorías iniciales
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(initialCategories));
+                return initialCategories;
+            }
             const parsed = JSON.parse(saved);
-            return Array.isArray(parsed) ? parsed : initialCategories;
+            // Si existe pero está vacío o corrupto, restaurar iniciales
+            if (!Array.isArray(parsed) || parsed.length === 0) {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(initialCategories));
+                return initialCategories;
+            }
+            return parsed;
         } catch (error) {
             console.error('Error fetching categories:', error);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(initialCategories));
             return initialCategories;
         }
     },
