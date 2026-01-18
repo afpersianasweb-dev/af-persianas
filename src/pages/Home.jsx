@@ -150,7 +150,7 @@ const Home = () => {
                         </div>
                         <h3 className="text-lg font-bold mb-2">Garantía</h3>
                         <p className="text-neutral-500 text-sm">
-                            Tu inversión está segura. Ofrecemos garantía real en <strong>mecanismos y tejidos</strong> contra defectos de fabricación.
+                            Tu inversión está segura. Ofrecemos garantía real en <strong>mecanismos y tejidos</strong> contra defectos de fabricación (Aplican términos y condiciones según el tejido).
                         </p>
                     </article>
                     <article className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all h-full">

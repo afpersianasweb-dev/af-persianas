@@ -42,6 +42,8 @@ const Warranty = () => {
                     <h3 className="text-xl font-bold mb-3">Tejidos</h3>
                     <p className="text-neutral-600">
                         Cobertura contra <span className="font-bold text-neutral-800">decoloración prematura</span> y defectos en el tejido.
+                        <br />
+                        <span className="text-sm text-neutral-500 italic mt-1 block">* Aplican términos y condiciones según el tipo de tejido.</span>
                     </p>
                 </motion.div>
 
