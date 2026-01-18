@@ -148,7 +148,7 @@ const Home = () => {
                         <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 text-primary">
                             <Shield className="w-6 h-6" />
                         </div>
-                        <h3 className="text-lg font-bold mb-2">Garantía por Escrito</h3>
+                        <h3 className="text-lg font-bold mb-2">Garantía</h3>
                         <p className="text-neutral-500 text-sm">
                             Tu inversión está segura. Ofrecemos garantía real en <strong>mecanismos y tejidos</strong> contra defectos de fabricación.
                         </p>
