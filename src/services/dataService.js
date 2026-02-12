@@ -6,9 +6,12 @@
 
 import { initialCategories } from '../data/catalog';
 
-// Force removal of old keys to prevent any remaining cache issues
-localStorage.removeItem('af_catalog_v4_real_images');
-localStorage.removeItem('af_protection_enabled_v4');
+// Force removal of all old keys to prevent any remaining cache issues
+Object.keys(localStorage).forEach(key => {
+    if (key.startsWith('af_') && !key.includes('_v5')) {
+        localStorage.removeItem(key);
+    }
+});
 
 const STORAGE_KEY = 'af_catalog_v5_aesthetic';
 const PROTECTION_KEY = 'af_protection_enabled_v5';
