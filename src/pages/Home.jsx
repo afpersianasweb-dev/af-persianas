@@ -172,10 +172,10 @@ const Home = () => {
             {/* Google Reviews */}
             <ReviewsSection />
 
-            {/* Categories Grid */}
+            {/* Collections Section */}
             <Section className="bg-white">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-bold text-neutral-900 mb-4">Nuestras Colecciones</h2>
+                    <h2 className="text-3xl font-bold text-neutral-900 mb-4">Nuestras Colecciones Destacadas</h2>
                     <div className="h-1 w-20 bg-secondary mx-auto"></div>
                 </div>
 
@@ -184,19 +184,21 @@ const Home = () => {
                         <motion.div
                             key={idx}
                             whileHover={{ y: -5 }}
-                            className="bg-neutral-50 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-6 border border-neutral-100 group cursor-pointer"
+                            onClick={() => window.location.href = `/catalogo/${cat.id}`}
+                            className="bg-neutral-50 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 border border-neutral-100 group cursor-pointer overflow-hidden relative"
                         >
-                            <div className="text-4xl mb-4">{cat.icon}</div>
-                            <h3 className="text-xl font-bold text-neutral-800 mb-2 group-hover:text-primary transition-colors">{cat.title || cat.name}</h3>
-                            <p className="text-neutral-500 text-sm mb-4 line-clamp-2">{cat.desc}</p>
-                            <div className="flex items-center text-secondary font-medium text-sm group-hover:translate-x-2 transition-transform">
-                                Ver modelos <ArrowRight className="w-4 h-4 ml-1" />
+                            <h3 className="text-2xl font-bold text-neutral-800 mb-3 group-hover:text-primary transition-colors relative z-10">{cat.name}</h3>
+                            <p className="text-neutral-500 text-sm mb-6 line-clamp-3 relative z-10">{cat.desc}</p>
+                            <div className="flex items-center text-secondary font-bold text-sm group-hover:translate-x-2 transition-transform relative z-10">
+                                Explorar Colección <ArrowRight className="w-4 h-4 ml-1" />
                             </div>
+                            {/* Decorative background circle */}
+                            <div className="absolute -top-10 -right-10 w-32 h-32 bg-secondary/5 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
                         </motion.div>
                     ))}
                 </div>
                 <div className="text-center mt-12">
-                    <Button to="/catalogo" variant="outline">Explorar Todo el Catálogo</Button>
+                    <Button to="/catalogo" variant="outline" className="px-10">Ver Catálogo Completo</Button>
                 </div>
             </Section>
 

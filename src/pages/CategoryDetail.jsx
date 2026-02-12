@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Section from '../components/Section';
 import Button from '../components/Button';
+import ProductCarousel from '../components/ProductCarousel';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
 import { useCatalog } from '../context/CatalogContext';
 
@@ -33,47 +34,63 @@ const CategoryDetail = () => {
 
     return (
         <div className="pt-0">
-            <div className="relative h-[60vh] min-h-[400px]">
-                <div className="absolute inset-0">
-                    <img src={data.img} alt={data.name} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-neutral-900/50"></div>
-                </div>
-                <div className="relative z-10 max-w-7xl mx-auto px-4 h-full flex flex-col justify-end pb-16">
-                    <Link to="/catalogo" className="text-white/80 hover:text-white flex items-center mb-6 transition-colors w-fit">
+            <div className="relative bg-neutral-900 overflow-hidden">
+                <div className="max-w-7xl mx-auto px-4 pt-12 pb-16 relative z-10">
+                    <Link to="/catalogo" className="text-white/60 hover:text-white flex items-center mb-8 transition-colors w-fit">
                         <ArrowLeft className="w-5 h-5 mr-2" /> Volver al Catálogo
                     </Link>
-                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">{data.name}</h1>
-                    <p className="text-xl text-neutral-200 max-w-2xl">{data.fullDesc || data.desc}</p>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">{data.name}</h1>
+                            <p className="text-xl text-neutral-300 max-w-xl leading-relaxed">
+                                {data.fullDesc || data.desc}
+                            </p>
+                        </div>
+                        <div className="relative">
+                            <ProductCarousel images={data.images} productName={data.name} />
+                        </div>
+                    </div>
                 </div>
+                {/* Subtle background decoration */}
+                <div className="absolute top-0 right-0 w-1/3 h-full bg-secondary/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
             </div>
 
             <Section>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 className="text-3xl font-bold mb-6 text-neutral-900">Características Principales</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
+                    <div className="flex flex-col justify-center">
+                        <h2 className="text-3xl font-bold mb-8 text-neutral-900">Especificaciones y Ventajas</h2>
                         <div className="grid grid-cols-1 gap-4">
                             {data.features && data.features.map((feature, idx) => (
-                                <div key={idx} className="flex items-center p-4 bg-neutral-50 rounded-lg border border-neutral-100">
-                                    <CheckCircle className="w-6 h-6 text-secondary mr-4" />
-                                    <span className="text-lg text-neutral-700">{feature}</span>
+                                <div key={idx} className="flex items-center p-5 bg-white rounded-xl border border-neutral-100 shadow-sm hover:shadow-md transition-shadow">
+                                    <CheckCircle className="w-6 h-6 text-secondary mr-4 flex-shrink-0" />
+                                    <span className="text-lg text-neutral-700 font-medium">{feature}</span>
                                 </div>
                             ))}
                         </div>
-                        <div className="mt-8">
-                            <Button to="/contacto" variant="primary" className="w-full md:w-auto text-lg px-8">
-                                Cotizar {data.name}
+                        <div className="mt-10">
+                            <Button to="/contacto" variant="primary" className="w-full md:w-auto text-lg px-10 py-4 shadow-xl shadow-primary/20">
+                                Cotizar Mi {data.name} Personalizada
                             </Button>
                         </div>
                     </div>
-                    <div className="bg-neutral-900 text-white p-8 rounded-2xl">
-                        <h3 className="text-xl font-bold mb-4">¿Por qué elegir {data.name}?</h3>
-                        <p className="text-neutral-400 mb-6 leading-relaxed">
-                            Nuestros modelos de {data.name.toLowerCase()} están fabricados con materiales de certificación internacional, garantizando durabilidad y un acabado premium. Además, cuentas con 5 años de garantía en tejidos y mecanismos.
-                        </p>
-                        <div className="h-0.5 w-full bg-neutral-800 mb-6"></div>
-                        <p className="text-sm text-neutral-500">
-                            * Disponibles en una amplia gama de colores y texturas. Solicita tu muestra a domicilio.
-                        </p>
+
+                    <div className="flex flex-col">
+                        <div className="bg-neutral-900 text-white p-10 rounded-3xl flex-grow flex flex-col justify-center relative overflow-hidden group">
+                            <div className="relative z-10">
+                                <h3 className="text-2xl font-bold mb-6">¿Por qué elegir {data.name}?</h3>
+                                <p className="text-neutral-400 text-lg mb-8 leading-relaxed">
+                                    Nuestras {data.name.toLowerCase()} están fabricadas con materiales de certificación internacional, garantizando una excelente durabilidad y un acabado premium. Además, cuentas con 5 años de garantía integral en tejidos y mecanismos.
+                                </p>
+                                <div className="h-0.5 w-24 bg-secondary mb-8"></div>
+                                <ul className="space-y-3 text-sm text-neutral-500 italic">
+                                    <li>• Amplia gama de colores y texturas premium.</li>
+                                    <li>• Solicita tu muestra a domicilio sin costo adicional.</li>
+                                    <li>• Instalación profesional incluida.</li>
+                                </ul>
+                            </div>
+                            {/* Decorative element */}
+                            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/5 rounded-full blur-3xl group-hover:bg-white/10 transition-colors"></div>
+                        </div>
                     </div>
                 </div>
             </Section>

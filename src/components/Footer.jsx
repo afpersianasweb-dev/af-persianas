@@ -41,14 +41,20 @@ const Footer = () => {
                     </div>
 
                     {/* Catalog */}
-                    <div>
-                        <h4 className="text-white font-semibold mb-4">Catálogo</h4>
-                        <ul className="space-y-2 text-sm">
-                            <li><Link to="/catalogo/enrollables" className="hover:text-white transition-colors">Enrollables</Link></li>
-                            <li><Link to="/catalogo/blackout" className="hover:text-white transition-colors">Blackout</Link></li>
-                            <li><Link to="/catalogo/sheer" className="hover:text-white transition-colors">Sheer Elegance</Link></li>
-                            <li><Link to="/catalogo/motorizadas" className="hover:text-white transition-colors">Motorizadas</Link></li>
-                        </ul>
+                    <div className="lg:col-span-2">
+                        <h4 className="text-white font-semibold mb-4 text-center lg:text-left">Nuestros Productos</h4>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2 text-sm">
+                            <Link to="/catalogo/cortina-onda-serena" className="hover:text-white transition-colors">Onda Serena</Link>
+                            <Link to="/catalogo/persiana-aluminio" className="hover:text-white transition-colors">Aluminio</Link>
+                            <Link to="/catalogo/persiana-enrollable-blackout" className="hover:text-white transition-colors">Enrollable Blackout</Link>
+                            <Link to="/catalogo/persiana-enrollable-screen" className="hover:text-white transition-colors">Enrollable Screen</Link>
+                            <Link to="/catalogo/persiana-panel-japones" className="hover:text-white transition-colors">Panel Japonés</Link>
+                            <Link to="/catalogo/persiana-sheer-elegance" className="hover:text-white transition-colors">Sheer Elegance</Link>
+                            <Link to="/catalogo/persiana-sheer-vertesse" className="hover:text-white transition-colors">Sheer Vertesse</Link>
+                            <Link to="/catalogo/persiana-vertical" className="hover:text-white transition-colors">Vertical</Link>
+                            <Link to="/catalogo/persiana-viewtex" className="hover:text-white transition-colors">Viewtex</Link>
+                            <Link to="/catalogo/telas-string" className="hover:text-white transition-colors">Telas String</Link>
+                        </div>
                     </div>
 
                     {/* Contact */}

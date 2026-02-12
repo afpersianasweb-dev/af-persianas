@@ -6,8 +6,17 @@
 
 import { initialCategories } from '../data/catalog';
 
-const STORAGE_KEY = 'af_catalog_data';
-const PROTECTION_KEY = 'af_protection_enabled';
+// Force removal of old keys to prevent any remaining cache issues
+localStorage.removeItem('af_catalog_data');
+localStorage.removeItem('af_protection_enabled');
+localStorage.removeItem('af_catalog_data_v2');
+localStorage.removeItem('af_catalog_v3_premium');
+localStorage.removeItem('af_protection_enabled_v3');
+localStorage.removeItem('af_catalog_v4_real_images');
+localStorage.removeItem('af_protection_enabled_v4');
+
+const STORAGE_KEY = 'af_catalog_v5_aesthetic';
+const PROTECTION_KEY = 'af_protection_enabled_v5';
 
 // Simulate network delay
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
@@ -27,8 +36,11 @@ export const dataService = {
                 return initialCategories;
             }
             const parsed = JSON.parse(saved);
-            // Si existe pero está vacío o corrupto, restaurar iniciales
-            if (!Array.isArray(parsed) || parsed.length === 0) {
+            // Versión de seguridad: Si no hay 10 productos o falta la propiedad 'images', forzamos reset
+            const isInvalidVersion = !Array.isArray(parsed) || parsed.length !== 10 || (parsed.length > 0 && !parsed[0].images);
+
+            if (isInvalidVersion) {
+                console.log("Detectada versión antigua o corrupta del catálogo. Reseteando a versión 10 productos...");
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(initialCategories));
                 return initialCategories;
             }

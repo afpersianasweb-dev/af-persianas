@@ -41,7 +41,10 @@ const About = () => {
             />
             {/* Header */}
             <section className="bg-neutral-900 text-white py-20 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542038784456-1ea8c935837a?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-20 z-0"></div>
+                <div
+                    className="absolute inset-0 bg-cover bg-center opacity-30 z-0"
+                    style={{ backgroundImage: "url('/images/equipo/equipo-1.jpg')" }}
+                ></div>
                 <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
@@ -71,9 +74,9 @@ const About = () => {
                         </p>
                     </div>
 
-                    <div className="relative h-64 md:h-full min-h-[300px] rounded-xl overflow-hidden shadow-xl">
+                    <div className="relative h-64 md:h-full min-h-[400px] rounded-2xl overflow-hidden shadow-2xl bg-neutral-100">
                         <img
-                            src="https://images.unsplash.com/photo-1507089947368-19c1da97ee87?auto=format&fit=crop&q=80"
+                            src="/images/equipo/equipo-2.jpg"
                             alt="Misión AF Persianas"
                             className="absolute inset-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                         />
@@ -81,9 +84,9 @@ const About = () => {
                 </div>
 
                 <div className="mt-24 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
-                    <div className="order-2 md:order-1 relative h-64 md:h-full min-h-[300px] rounded-xl overflow-hidden shadow-xl">
+                    <div className="order-2 md:order-1 relative h-64 md:h-full min-h-[400px] rounded-2xl overflow-hidden shadow-2xl bg-neutral-100">
                         <img
-                            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80"
+                            src="/images/equipo/equipo-3.jpg"
                             alt="Visión AF Persianas"
                             className="absolute inset-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                         />
