@@ -7,11 +7,6 @@
 import { initialCategories } from '../data/catalog';
 
 // Force removal of old keys to prevent any remaining cache issues
-localStorage.removeItem('af_catalog_data');
-localStorage.removeItem('af_protection_enabled');
-localStorage.removeItem('af_catalog_data_v2');
-localStorage.removeItem('af_catalog_v3_premium');
-localStorage.removeItem('af_protection_enabled_v3');
 localStorage.removeItem('af_catalog_v4_real_images');
 localStorage.removeItem('af_protection_enabled_v4');
 
