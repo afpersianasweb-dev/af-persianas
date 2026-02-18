@@ -25,7 +25,7 @@ Teléfono: ${phone}
 Mensaje: ${message}`;
 
         const encodedMessage = encodeURIComponent(whatsappMessage);
-        const whatsappUrl = `https://api.whatsapp.com/send?phone=573147958057&text=${encodedMessage}`;
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=573023644236&text=${encodedMessage}`;
 
         window.open(whatsappUrl, '_blank');
     };
@@ -54,14 +54,15 @@ Mensaje: ${message}`;
                         <div className="p-4 bg-neutral-50 rounded-lg">
                             <p className="font-bold text-neutral-900">Atención a Clientes</p>
                             <p className="text-neutral-600">+57 314 795 8057</p>
+                            <p className="text-neutral-600">+57 302 364 4236</p>
                         </div>
                         <div className="p-4 bg-neutral-50 rounded-lg">
                             <p className="font-bold text-neutral-900">Correo Electrónico</p>
-                            <p className="text-neutral-600">afpersianas@gmail.com</p>
+                            <p className="text-neutral-600">persianas.af@gmail.com</p>
                         </div>
 
                         <a
-                            href="https://api.whatsapp.com/send?phone=573147958057&text=Hola,%20me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n%20sobre%20sus%20servicios."
+                            href="https://api.whatsapp.com/send?phone=573023644236&text=Hola,%20me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n%20sobre%20sus%20servicios."
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center p-4 bg-green-50 border border-green-200 rounded-lg hover:bg-green-100 transition-colors group cursor-pointer"

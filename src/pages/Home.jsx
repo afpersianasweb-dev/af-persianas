@@ -39,7 +39,7 @@ const Home = () => {
                             <img
                                 src="/logo-update.png"
                                 alt="Logo AF Persianas - Fabrica y Venta de Persianas en Pereira y Eje Cafetero"
-                                className="w-32 sm:w-40 md:w-56 h-auto brightness-0 invert mix-blend-screen drop-shadow-2xl"
+                                className="w-40 sm:w-56 md:w-80 h-auto brightness-0 invert mix-blend-screen drop-shadow-2xl"
                             />
                         </div>
 

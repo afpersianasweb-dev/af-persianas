@@ -12,7 +12,6 @@ const Home = lazy(() => import('./pages/Home'));
 const Catalog = lazy(() => import('./pages/Catalog'));
 const CategoryDetail = lazy(() => import('./pages/CategoryDetail'));
 const About = lazy(() => import('./pages/About'));
-const Gallery = lazy(() => import('./pages/Gallery'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const Warranty = lazy(() => import('./pages/Warranty'));
@@ -40,7 +39,6 @@ function App() {
               <Route path="catalogo" element={<Catalog />} />
               <Route path="catalogo/:category" element={<CategoryDetail />} />
               <Route path="nosotros" element={<About />} />
-              <Route path="proyectos" element={<Gallery />} />
               <Route path="contacto" element={<Contact />} />
               <Route path="privacidad" element={<Privacy />} />
               <Route path="garantia" element={<Warranty />} />

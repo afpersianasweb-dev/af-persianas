@@ -33,7 +33,6 @@ const Navbar = () => {
         { name: 'Inicio', path: '/' },
         { name: 'Catálogo', path: '/catalogo' },
         { name: 'Nosotros', path: '/nosotros' },
-        { name: 'Proyectos', path: '/proyectos' },
         { name: 'Contacto', path: '/contacto' },
     ];
 
@@ -55,7 +54,7 @@ const Navbar = () => {
                 - Desktop: h-12 (standard)
                 - Aspect Ratio: managed by img containment
              */}
-                        <div className="relative h-10 md:h-12 w-auto flex items-center justify-start">
+                        <div className="relative h-12 md:h-16 w-auto flex items-center justify-start">
                             <img
                                 src="/logo-update.png"
                                 alt="AF Persianas Logo"

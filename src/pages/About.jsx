@@ -76,9 +76,9 @@ const About = () => {
 
                     <div className="relative h-64 md:h-full min-h-[400px] rounded-2xl overflow-hidden shadow-2xl bg-neutral-100">
                         <img
-                            src="/images/equipo/equipo-2.jpg"
-                            alt="Misión AF Persianas"
-                            className="absolute inset-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                            src="/images/equipo/equipo-4.jpeg"
+                            alt="Fundadores de AF Persianas"
+                            className="absolute inset-0 w-full h-full object-cover object-[center_30%] transform hover:scale-105 transition-transform duration-700"
                         />
                     </div>
                 </div>
