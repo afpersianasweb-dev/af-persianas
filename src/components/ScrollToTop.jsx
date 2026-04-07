@@ -9,16 +9,47 @@ import { useLocation, useNavigationType } from 'react-router-dom';
  * - REPLACE navigation: scroll to top ✅
  */
 const ScrollToTop = () => {
-    const { pathname } = useLocation();
+    const { pathname, key } = useLocation();
     const navigationType = useNavigationType();
 
     useEffect(() => {
-        // Only scroll to top on forward navigation (PUSH/REPLACE)
-        // On POP (browser back/forward), let the browser handle scroll restoration
-        if (navigationType !== 'POP') {
-            window.scrollTo(0, 0);
+        // Desactivar la restauración nativa del navegador que suele fallar en SPAs y lanzar al footer
+        if ('scrollRestoration' in window.history) {
+            window.history.scrollRestoration = 'manual';
         }
-    }, [pathname, navigationType]);
+
+        // Restaurar posición si volvemos atrás, sino ir arriba
+        if (navigationType === 'POP') {
+            const savedPosition = sessionStorage.getItem(`scroll-${key}`);
+            if (savedPosition !== null) {
+                // Pequeño delay para dejar que React monte el DOM primero
+                setTimeout(() => {
+                    window.scrollTo({ top: parseInt(savedPosition, 10), behavior: 'instant' });
+                }, 50);
+            }
+        } else {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+
+        // Debounce simple para guardar el scroll de la página actual frecuentemente
+        let timeoutId = null;
+        const handleScroll = () => {
+            if (timeoutId) return;
+            timeoutId = setTimeout(() => {
+                sessionStorage.setItem(`scroll-${key}`, window.scrollY.toString());
+                timeoutId = null;
+            }, 100);
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        // Cleanup: asegurar el último valor antes de desmontar
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            if (timeoutId) clearTimeout(timeoutId);
+            sessionStorage.setItem(`scroll-${key}`, window.scrollY.toString());
+        };
+    }, [pathname, key, navigationType]);
 
     return null;
 };
