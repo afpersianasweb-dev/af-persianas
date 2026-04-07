@@ -38,13 +38,13 @@ const Catalog = () => {
                     <Link
                         key={cat.id}
                         to={`/catalogo/${cat.id}`}
-                        className="group relative flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out border border-neutral-100"
+                        className="group relative flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm md:hover:shadow-2xl md:hover:-translate-y-2 transition-all duration-500 ease-out border border-neutral-100"
                     >
                         <div className="relative aspect-[4/3] overflow-hidden">
                             <img
                                 src={cat.images && cat.images.length > 0 ? cat.images[0] : '/placeholder.jpg'}
                                 alt={cat.name}
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                className="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-110"
                                 onError={(e) => {
                                     e.target.src = 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80';
                                 }}
@@ -59,7 +59,7 @@ const Catalog = () => {
                             </p>
                             <div className="flex items-center text-secondary font-bold text-sm uppercase tracking-wider">
                                 Ver Detalles
-                                <span className="ml-2 transition-transform duration-300 group-hover:translate-x-2">→</span>
+                                <span className="ml-2 transition-transform duration-300 md:group-hover:translate-x-2">→</span>
                             </div>
                         </div>
                     </Link>
@@ -78,32 +78,32 @@ const Catalog = () => {
                         href="/catalogos/Catalogo%20linea%20inyectada.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group flex flex-1 items-center justify-center p-6 bg-white border border-neutral-200 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] active:scale-95 text-neutral-800 hover:border-primary"
+                        className="group flex flex-1 items-center justify-center p-6 bg-white border border-neutral-200 rounded-xl shadow-sm md:hover:shadow-xl transition-all duration-300 ease-out md:hover:-translate-y-1 md:hover:scale-[1.02] active:scale-95 text-neutral-800 md:hover:border-primary"
                     >
-                        <div className="mr-4 bg-primary/10 p-3 rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                        <div className="mr-4 bg-primary/10 p-3 rounded-full text-primary md:group-hover:bg-primary md:group-hover:text-white transition-colors">
                             <FileText className="w-6 h-6" />
                         </div>
                         <div className="text-left flex-1">
                             <h3 className="font-bold text-lg">Línea Inyectada</h3>
                             <p className="text-sm text-neutral-500">PDF Visual</p>
                         </div>
-                        <Download className="w-5 h-5 text-neutral-400 group-hover:text-primary transition-colors" />
+                        <Download className="w-5 h-5 text-neutral-400 md:group-hover:text-primary transition-colors" />
                     </a>
 
                     <a
                         href="/catalogos/Catalogo%20Sombrillas.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group flex flex-1 items-center justify-center p-6 bg-white border border-neutral-200 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] active:scale-95 text-neutral-800 hover:border-secondary"
+                        className="group flex flex-1 items-center justify-center p-6 bg-white border border-neutral-200 rounded-xl shadow-sm md:hover:shadow-xl transition-all duration-300 ease-out md:hover:-translate-y-1 md:hover:scale-[1.02] active:scale-95 text-neutral-800 md:hover:border-secondary"
                     >
-                        <div className="mr-4 bg-secondary/10 p-3 rounded-full text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                        <div className="mr-4 bg-secondary/10 p-3 rounded-full text-secondary md:group-hover:bg-secondary md:group-hover:text-white transition-colors">
                             <FileText className="w-6 h-6" />
                         </div>
                         <div className="text-left flex-1">
                             <h3 className="font-bold text-lg">Sombrillas</h3>
                             <p className="text-sm text-neutral-500">Colección Exterior</p>
                         </div>
-                        <Download className="w-5 h-5 text-neutral-400 group-hover:text-secondary transition-colors" />
+                        <Download className="w-5 h-5 text-neutral-400 md:group-hover:text-secondary transition-colors" />
                     </a>
                 </div>
             </div>

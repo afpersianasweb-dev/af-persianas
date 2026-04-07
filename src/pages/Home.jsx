@@ -185,15 +185,15 @@ const Home = () => {
                             key={idx}
                             whileHover={{ y: -5 }}
                             onClick={() => window.location.href = `/catalogo/${cat.id}`}
-                            className="bg-neutral-50 rounded-2xl shadow-sm transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl p-8 border border-neutral-100 group cursor-pointer overflow-hidden relative"
+                            className="bg-neutral-50 rounded-2xl shadow-sm transition-all duration-500 ease-out md:hover:-translate-y-2 md:hover:scale-[1.02] md:hover:shadow-2xl p-8 border border-neutral-100 group cursor-pointer overflow-hidden relative"
                         >
-                            <h3 className="text-2xl font-bold text-neutral-800 mb-3 group-hover:text-primary transition-colors relative z-10">{cat.name}</h3>
+                            <h3 className="text-2xl font-bold text-neutral-800 mb-3 md:group-hover:text-primary transition-colors relative z-10">{cat.name}</h3>
                             <p className="text-neutral-500 text-sm mb-6 line-clamp-3 relative z-10">{cat.desc}</p>
-                            <div className="flex items-center text-secondary font-bold text-sm group-hover:translate-x-2 transition-transform relative z-10">
+                            <div className="flex items-center text-secondary font-bold text-sm md:group-hover:translate-x-2 transition-transform relative z-10">
                                 Explorar Colección <ArrowRight className="w-4 h-4 ml-1" />
                             </div>
                             {/* Decorative background circle */}
-                            <div className="absolute -top-10 -right-10 w-32 h-32 bg-secondary/5 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+                            <div className="absolute -top-10 -right-10 w-32 h-32 bg-secondary/5 rounded-full md:group-hover:scale-150 transition-transform duration-500"></div>
                         </motion.div>
                     ))}
                 </div>
