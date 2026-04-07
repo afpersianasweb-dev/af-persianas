@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Download, FileText } from 'lucide-react';
 import Section from '../components/Section';
 import { useCatalog } from '../context/CatalogContext';
 
@@ -63,6 +64,48 @@ const Catalog = () => {
                         </div>
                     </Link>
                 ))}
+            </div>
+
+            <div className="mt-20 border-t border-neutral-100 pt-16">
+                <div className="text-center mb-10">
+                    <h2 className="text-3xl font-bold text-neutral-900 mb-4">Catálogos de Exteriores</h2>
+                    <p className="text-neutral-500 max-w-2xl mx-auto">
+                        Descarga o visualiza nuestras especificaciones técnicas y opciones exclusivas para áreas exteriores.
+                    </p>
+                </div>
+                <div className="flex flex-col sm:flex-row justify-center gap-6 max-w-4xl mx-auto px-4">
+                    <a
+                        href="/catalogo/Catalogo%20linea%20inyectada.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex flex-1 items-center justify-center p-6 bg-white border border-neutral-200 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] active:scale-95 text-neutral-800 hover:border-primary"
+                    >
+                        <div className="mr-4 bg-primary/10 p-3 rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                            <FileText className="w-6 h-6" />
+                        </div>
+                        <div className="text-left flex-1">
+                            <h3 className="font-bold text-lg">Línea Inyectada</h3>
+                            <p className="text-sm text-neutral-500">PDF Visual</p>
+                        </div>
+                        <Download className="w-5 h-5 text-neutral-400 group-hover:text-primary transition-colors" />
+                    </a>
+
+                    <a
+                        href="/catalogo/Catalogo%20Sombrillas.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex flex-1 items-center justify-center p-6 bg-white border border-neutral-200 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] active:scale-95 text-neutral-800 hover:border-secondary"
+                    >
+                        <div className="mr-4 bg-secondary/10 p-3 rounded-full text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                            <FileText className="w-6 h-6" />
+                        </div>
+                        <div className="text-left flex-1">
+                            <h3 className="font-bold text-lg">Sombrillas</h3>
+                            <p className="text-sm text-neutral-500">Colección Exterior</p>
+                        </div>
+                        <Download className="w-5 h-5 text-neutral-400 group-hover:text-secondary transition-colors" />
+                    </a>
+                </div>
             </div>
         </Section>
     );
