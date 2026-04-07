@@ -30,21 +30,21 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Catalog */}
                     <div>
-                        <h4 className="text-white font-semibold mb-4 text-center lg:text-left">Nuestros Productos</h4>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2 text-sm">
-                            <Link to="/catalogo/cortina-onda-serena" className="hover:text-white transition-colors">Onda Serena</Link>
-                            <Link to="/catalogo/persiana-aluminio" className="hover:text-white transition-colors">Aluminio</Link>
-                            <Link to="/catalogo/persiana-enrollable-blackout" className="hover:text-white transition-colors">Enrollable Blackout</Link>
-                            <Link to="/catalogo/persiana-enrollable-screen" className="hover:text-white transition-colors">Enrollable Screen</Link>
-                            <Link to="/catalogo/persiana-panel-japones" className="hover:text-white transition-colors">Panel Japonés</Link>
-                            <Link to="/catalogo/persiana-sheer-elegance" className="hover:text-white transition-colors">Sheer Elegance</Link>
-                            <Link to="/catalogo/persiana-sheer-vertesse" className="hover:text-white transition-colors">Sheer Vertesse</Link>
-                            <Link to="/catalogo/persiana-vertical" className="hover:text-white transition-colors">Vertical</Link>
-                            <Link to="/catalogo/persiana-viewtex" className="hover:text-white transition-colors">Viewtex</Link>
-                            <Link to="/catalogo/telas-string" className="hover:text-white transition-colors">Telas String</Link>
-                        </div>
+                        <h4 className="text-white font-semibold mb-6 text-center lg:text-left tracking-wider uppercase text-xs">Colecciones</h4>
+                        <ul className="space-y-4 text-sm flex flex-col items-center lg:items-start">
+                            <li><Link to="/catalogo/persiana-sheer-elegance" className="hover:text-secondary transition-colors">Sheer Elegance</Link></li>
+                            <li><Link to="/catalogo/persiana-enrollable-blackout" className="hover:text-secondary transition-colors">Enrollable Blackout</Link></li>
+                            <li><Link to="/catalogo/persiana-panel-japones" className="hover:text-secondary transition-colors">Panel Japonés</Link></li>
+                            <li><Link to="/catalogo/persiana-sheer-vertesse" className="hover:text-secondary transition-colors">Sheer Vertesse</Link></li>
+                            <li><Link to="/catalogo/cortina-onda-serena" className="hover:text-secondary transition-colors">Onda Serena</Link></li>
+                            <li className="pt-2">
+                                <Link to="/catalogo" className="text-secondary font-bold hover:text-white transition-colors flex items-center group decoration-secondary/30 underline-offset-4 hover:underline">
+                                    Ver Catálogo Completo
+                                    <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                                </Link>
+                            </li>
+                        </ul>
                     </div>
 
                     {/* Contact */}
@@ -67,20 +67,23 @@ const Footer = () => {
                                 <span>persianas.af@gmail.com</span>
                             </li>
                         </ul>
+                        <div className="mt-8 flex flex-col space-y-2 text-xs border-t border-neutral-800/50 pt-6">
+                            <h5 className="text-white font-semibold mb-1 uppercase tracking-wider">Legal</h5>
+                            <Link to="/privacidad" className="hover:text-secondary transition-colors">Política de Privacidad</Link>
+                            <Link to="/garantia" className="hover:text-secondary transition-colors">Garantía de Productos</Link>
+                        </div>
                     </div>
                 </div>
 
-                <div className="border-t border-neutral-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
-                    <div className="flex flex-col md:flex-row items-center gap-4">
-                        <p>&copy; {new Date().getFullYear()} AF Persianas. Todos los derechos reservados.</p>
-                        <span className="hidden md:inline text-neutral-600">|</span>
-                        <p className="text-neutral-500">
-                            Desarrollado por <span className="text-secondary font-semibold hover:text-white transition-colors cursor-pointer">Itram</span>
-                        </p>
+                <div className="border-t border-neutral-800/50 mt-12 py-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-neutral-600 uppercase tracking-[0.2em] gap-4">
+                    {/* Copyright */}
+                    <div className="text-center md:text-left">
+                        &copy; {new Date().getFullYear()} AF Persianas. Todos los derechos reservados.
                     </div>
-                    <div className="flex space-x-6 mt-4 md:mt-0">
-                        <Link to="/privacidad" className="hover:text-white transition-colors">Política de Privacidad</Link>
-                        <Link to="/garantia" className="hover:text-white transition-colors">Garantía</Link>
+
+                    {/* Developer Credit */}
+                    <div className="text-center md:text-right opacity-80 hover:opacity-100 transition-opacity normal-case tracking-normal">
+                        Desarrollado por <span className="text-secondary font-bold tracking-widest uppercase">ITRAM</span>
                     </div>
                 </div>
             </div>
