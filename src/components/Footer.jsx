@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer className="bg-neutral-900 text-neutral-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
 
                     {/* Brand */}
                     <div className="space-y-4">
@@ -28,19 +28,8 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Links */}
-                    <div>
-                        <h4 className="text-white font-semibold mb-4">Navegación</h4>
-                        <ul className="space-y-2 text-sm">
-                            <li><Link to="/" className="hover:text-white transition-colors">Inicio</Link></li>
-                            <li><Link to="/catalogo" className="hover:text-white transition-colors">Catálogo</Link></li>
-                            <li><Link to="/nosotros" className="hover:text-white transition-colors">Nosotros</Link></li>
-                            <li><Link to="/contacto" className="hover:text-white transition-colors">Contacto</Link></li>
-                        </ul>
-                    </div>
-
                     {/* Catalog */}
-                    <div className="lg:col-span-2">
+                    <div>
                         <h4 className="text-white font-semibold mb-4 text-center lg:text-left">Nuestros Productos</h4>
                         <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2 text-sm">
                             <Link to="/catalogo/cortina-onda-serena" className="hover:text-white transition-colors">Onda Serena</Link>
@@ -62,7 +51,7 @@ const Footer = () => {
                         <ul className="space-y-3 text-sm">
                             <li className="flex items-start">
                                 <MapPin className="w-5 h-5 mr-3 text-secondary shrink-0" />
-                                <span>Servicio en Santa Rosa de Cabal, Pereira, Dosquebradas y zonas rurales.</span>
+                                <span>Santa Rosa de Cabal, Risaralda</span>
                             </li>
                             <li className="flex items-center">
                                 <Phone className="w-5 h-5 mr-3 text-secondary shrink-0" />
