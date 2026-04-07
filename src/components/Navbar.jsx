@@ -113,7 +113,7 @@ const Navbar = () => {
                         </Link>
                     ))}
                     <Button variant="secondary" className="w-full justify-center" to="/contacto">
-                        Cotizar Ahora
+                        Cotizar
                     </Button>
                 </div>
             )}

@@ -95,7 +95,7 @@ const Home = () => {
                             <li className="flex items-center"><CheckCircle className="w-4 h-4 mr-2 text-secondary" /> Instalación profesional</li>
                             <li className="flex items-center"><CheckCircle className="w-4 h-4 mr-2 text-secondary" /> Mantenimiento confiable</li>
                         </ul>
-                        <Button to="/contacto" variant="outline" className="w-full sm:w-auto">Cotizar para mi Hogar</Button>
+                        <Button to="/contacto" variant="outline" className="w-full sm:w-auto">Cotizar</Button>
                     </div>
 
                     {/* Empresas */}

@@ -69,7 +69,7 @@ const CategoryDetail = () => {
                         </div>
                         <div className="mt-10">
                             <Button to="/contacto" variant="primary" className="w-full md:w-auto text-lg px-10 py-4 shadow-xl shadow-primary/20">
-                                Cotizar Mi {data.name} Personalizada
+                                Cotizar
                             </Button>
                         </div>
                     </div>

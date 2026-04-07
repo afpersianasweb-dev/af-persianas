@@ -18,19 +18,21 @@ const ProductCarousel = ({ images, productName }) => {
     return (
         <div className="relative group overflow-hidden rounded-2xl aspect-[4/3] bg-neutral-100">
             <AnimatePresence mode="wait">
-                <motion.img
-                    key={currentIndex}
-                    src={images[currentIndex]}
-                    alt={`${productName} - Vista ${currentIndex + 1}`}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.3 }}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                        e.target.src = 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80'; // Fallback
-                    }}
-                />
+                <div className="w-full h-full overflow-hidden group/image relative">
+                    <motion.img
+                        key={currentIndex}
+                        src={images[currentIndex]}
+                        alt={`${productName} - Vista ${currentIndex + 1}`}
+                        initial={{ opacity: 0, scale: 1.1 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 1 }}
+                        transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+                        className="w-full h-full object-cover transition-transform duration-1000 md:group-hover/image:scale-110 cursor-zoom-in"
+                        onError={(e) => {
+                            e.target.src = 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80'; // Fallback
+                        }}
+                    />
+                </div>
             </AnimatePresence>
 
             {/* Navigation Arrows */}
@@ -38,14 +40,14 @@ const ProductCarousel = ({ images, productName }) => {
                 <>
                     <button
                         onClick={prevSlide}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-neutral-900 p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
+                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/40 hover:bg-white/80 backdrop-blur-md text-neutral-900 p-3 rounded-full shadow-lg transition-all z-20 flex items-center justify-center border border-white/20"
                         aria-label="Previous image"
                     >
                         <ChevronLeft className="w-6 h-6" />
                     </button>
                     <button
                         onClick={nextSlide}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-neutral-900 p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/40 hover:bg-white/80 backdrop-blur-md text-neutral-900 p-3 rounded-full shadow-lg transition-all z-20 flex items-center justify-center border border-white/20"
                         aria-label="Next image"
                     >
                         <ChevronRight className="w-6 h-6" />
