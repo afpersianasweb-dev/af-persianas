@@ -58,6 +58,8 @@ const Navbar = () => {
                             <img
                                 src="/logo-update.png"
                                 alt="AF Persianas Logo"
+                                width="160"
+                                height="64"
                                 className="h-full w-auto object-contain transition-all duration-300 mix-blend-multiply"
                             />
                         </div>

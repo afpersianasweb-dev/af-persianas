@@ -1,6 +1,5 @@
 import React from 'react';
 import { MessageCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 const WhatsAppButton = () => {
     const phoneNumber = "573147958057";
@@ -16,13 +15,11 @@ const WhatsAppButton = () => {
             aria-label="Chat en WhatsApp"
         >
             <span className="absolute inset-0 rounded-full bg-green-500 opacity-75 animate-ping group-hover:opacity-100"></span>
-            <motion.div
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="relative flex items-center justify-center w-14 h-14 bg-green-500 rounded-full shadow-lg text-white hover:bg-green-600 transition-colors"
+            <div
+                className="relative flex items-center justify-center w-14 h-14 bg-green-500 rounded-full shadow-lg text-white hover:bg-green-600 hover:scale-110 active:scale-90 transition-all duration-200"
             >
                 <MessageCircle className="w-8 h-8" />
-            </motion.div>
+            </div>
 
             {/* Tooltip */}
             <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white text-neutral-800 px-3 py-1 rounded-lg text-sm font-medium shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">

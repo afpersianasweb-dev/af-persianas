@@ -191,10 +191,10 @@ const ReviewsSection = () => {
 
             <div className="relative max-w-6xl mx-auto px-8">
                 {/* Arrows */}
-                <button onClick={prevReview} className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white shadow-md hover:bg-neutral-50 text-neutral-600 transition-colors hidden md:block">
+                <button onClick={prevReview} aria-label="Reseña anterior" className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white shadow-md hover:bg-neutral-50 text-neutral-600 transition-colors hidden md:block">
                     <ChevronLeft className="w-6 h-6" />
                 </button>
-                <button onClick={nextReview} className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white shadow-md hover:bg-neutral-50 text-neutral-600 transition-colors hidden md:block">
+                <button onClick={nextReview} aria-label="Siguiente reseña" className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white shadow-md hover:bg-neutral-50 text-neutral-600 transition-colors hidden md:block">
                     <ChevronRight className="w-6 h-6" />
                 </button>
 
@@ -215,7 +215,7 @@ const ReviewsSection = () => {
                                         {review.initial}
                                     </div>
                                     <div className="flex-1">
-                                        <h4 className="font-bold text-neutral-900 text-sm">{review.name}</h4>
+                                        <h3 className="font-bold text-neutral-900 text-sm">{review.name}</h3>
                                         <p className="text-neutral-500 text-xs">{review.date}</p>
                                     </div>
                                     <GoogleIcon />

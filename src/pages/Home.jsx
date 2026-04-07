@@ -24,8 +24,18 @@ const Home = () => {
             />
             {/* Hero Section */}
             <section className="relative min-h-screen flex items-center justify-center bg-neutral-900 text-white overflow-hidden py-20">
-                {/* Natural Background - No overlay */}
-                <div className="absolute inset-0 bg-[url('/hero-natural.jpg')] bg-cover bg-center z-0"></div>
+                {/* Natural Background — real <img> for LCP discoverability */}
+                <img
+                    src="/hero-natural.jpg"
+                    alt=""
+                    role="presentation"
+                    fetchpriority="high"
+                    loading="eager"
+                    decoding="async"
+                    width="1920"
+                    height="1080"
+                    className="absolute inset-0 w-full h-full object-cover z-0"
+                />
 
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full my-auto">
                     <motion.div
@@ -39,6 +49,8 @@ const Home = () => {
                             <img
                                 src="/logo-update.png"
                                 alt="Logo AF Persianas - Fabrica y Venta de Persianas en Pereira y Eje Cafetero"
+                                width="320"
+                                height="320"
                                 className="w-56 sm:w-64 md:w-80 h-auto brightness-0 invert mix-blend-screen drop-shadow-2xl"
                             />
                         </div>
@@ -83,10 +95,10 @@ const Home = () => {
                         <div className="absolute top-0 right-0 p-8 alpha-10 text-neutral-200">
                             <HomeIcon className="w-32 h-32 opacity-10" />
                         </div>
-                        <h3 className="text-2xl font-bold text-primary mb-4 flex items-center">
+                        <h2 className="text-2xl font-bold text-primary mb-4 flex items-center">
                             <HomeIcon className="w-6 h-6 mr-3" />
                             Para Tu Hogar
-                        </h3>
+                        </h2>
                         <p className="text-neutral-600 mb-6 leading-relaxed">
                             Ayudamos a transformar tu casa en un espacio más estético y cómodo. Ofrecemos asesoría personalizada y productos que garantizan privacidad, protección solar y confort.
                         </p>
@@ -103,10 +115,10 @@ const Home = () => {
                         <div className="absolute top-0 right-0 p-8 alpha-10 text-neutral-700">
                             <Building2 className="w-32 h-32 opacity-10" />
                         </div>
-                        <h3 className="text-2xl font-bold text-secondary mb-4 flex items-center">
+                        <h2 className="text-2xl font-bold text-secondary mb-4 flex items-center">
                             <Building2 className="w-6 h-6 mr-3" />
                             Para Empresas y Aliados
-                        </h3>
+                        </h2>
                         <p className="text-neutral-300 mb-6 leading-relaxed">
                             Somos el aliado estratégico para arquitectos, constructoras y oficinas corporativas. Soluciones de alta durabilidad, procesos eficientes y cumplimiento en tiempos.
                         </p>

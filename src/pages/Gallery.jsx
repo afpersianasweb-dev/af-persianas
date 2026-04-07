@@ -85,6 +85,7 @@ const Gallery = () => {
                         <button
                             className="absolute top-4 right-4 text-white hover:text-secondary transition-colors"
                             onClick={() => setSelectedImage(null)}
+                            aria-label="Cerrar imagen"
                         >
                             <X className="w-10 h-10" />
                         </button>

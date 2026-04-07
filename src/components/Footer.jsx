@@ -15,6 +15,8 @@ const Footer = () => {
                             <img
                                 src="/logo-update.png"
                                 alt="AF Persianas"
+                                width="160"
+                                height="64"
                                 className="h-full w-auto object-contain brightness-0 invert mix-blend-screen"
                             />
                         </div>
@@ -22,9 +24,9 @@ const Footer = () => {
                             Transformamos tus espacios con elegancia y funcionalidad. Expertos en venta e instalación de persianas de alta gama.
                         </p>
                         <div className="flex space-x-4 pt-2">
-                            <a href="https://www.facebook.com/persianas.af/" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors"><Facebook className="w-5 h-5" /></a>
-                            <a href="https://www.instagram.com/persianas.af/" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors"><Instagram className="w-5 h-5" /></a>
-                            <a href="https://api.whatsapp.com/send?phone=573147958057&text=Hola,%20me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n%20sobre%20sus%20servicios." target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors"><MessageCircle className="w-5 h-5" /></a>
+                            <a href="https://www.facebook.com/persianas.af/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-secondary transition-colors"><Facebook className="w-5 h-5" /></a>
+                            <a href="https://www.instagram.com/persianas.af/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-secondary transition-colors"><Instagram className="w-5 h-5" /></a>
+                            <a href="https://api.whatsapp.com/send?phone=573147958057&text=Hola,%20me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n%20sobre%20sus%20servicios." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:text-secondary transition-colors"><MessageCircle className="w-5 h-5" /></a>
                         </div>
                     </div>
 
