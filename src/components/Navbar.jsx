@@ -36,12 +36,22 @@ const Navbar = () => {
         { name: 'Contacto', path: '/contacto' },
     ];
 
+    // Pages with dark hero backgrounds where white logo is appropriate
+    const darkHeroPages = ['/', '/nosotros'];
+    const hasDarkHero = darkHeroPages.includes(location.pathname);
+    // Use dark logo variant when: scrolled OR on a page without a dark hero
+    const useDarkLogo = scrolled || !hasDarkHero;
+
     return (
         <nav
             aria-label="Navegación principal"
             className={clsx(
                 "fixed w-full z-50 transition-all duration-300",
-                scrolled ? "bg-white/95 backdrop-blur-md shadow-sm py-2" : "bg-transparent py-4"
+                scrolled
+                    ? "bg-white/95 backdrop-blur-md shadow-sm py-2"
+                    : hasDarkHero
+                        ? "bg-transparent py-4"
+                        : "bg-white/95 backdrop-blur-md shadow-sm py-4"
             )}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,17 +60,19 @@ const Navbar = () => {
                     <Link to="/" className="flex items-center group" aria-label="AF Persianas Inicio">
                         {/* 
                 Logo Container:
-                - Mobile: h-10 (smaller)
-                - Desktop: h-12 (standard)
+                - Mobile: h-20 (larger for readability)
+                - Desktop: h-20 (standard)
                 - Aspect Ratio: managed by img containment
              */}
-                        <div className="relative h-16 md:h-20 w-auto flex items-center justify-start">
+                        <div className="relative h-20 md:h-20 w-auto flex items-center justify-start">
                             <img
                                 src="/logo-update.png"
                                 alt="AF Persianas Logo"
                                 className={clsx(
                                     "h-full w-auto object-contain transition-all duration-300",
-                                    scrolled ? "mix-blend-multiply" : "brightness-0 invert mix-blend-screen"
+                                    useDarkLogo
+                                        ? "mix-blend-multiply"
+                                        : "brightness-0 invert mix-blend-screen drop-shadow-[0_1px_3px_rgba(0,0,0,0.4)]"
                                 )}
                             />
                         </div>
@@ -74,7 +86,7 @@ const Navbar = () => {
                                 to={link.path}
                                 className={clsx(
                                     "relative text-sm font-medium transition-colors group py-1",
-                                    location.pathname === link.path ? "text-secondary" : (scrolled ? "text-neutral-700 hover:text-secondary" : "text-white hover:text-secondary")
+                                    location.pathname === link.path ? "text-secondary" : (useDarkLogo ? "text-neutral-700 hover:text-secondary" : "text-white hover:text-secondary")
                                 )}
                             >
                                 {link.name}
@@ -94,7 +106,7 @@ const Navbar = () => {
                             aria-label="Abrir menú de navegación"
                             className={clsx(
                                 "hover:text-primary focus:outline-none",
-                                scrolled ? "text-neutral-700" : "text-white"
+                                useDarkLogo ? "text-neutral-700" : "text-white"
                             )}
                         >
                             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
