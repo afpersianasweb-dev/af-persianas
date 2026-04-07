@@ -55,16 +55,16 @@ const Navbar = () => {
             )}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-20 md:h-24">
+                <div className="flex justify-between items-center h-16 md:h-20">
                     {/* Logo */}
                     <Link to="/" className="flex items-center group" aria-label="AF Persianas Inicio">
                         {/* 
                 Logo Container:
-                - Mobile: h-20 (larger for readability)
-                - Desktop: h-20 (standard)
+                - Mobile: h-14 (larger than original h-12, but balanced)
+                - Desktop: h-16 (restored original size)
                 - Aspect Ratio: managed by img containment
              */}
-                        <div className="relative h-20 md:h-20 w-auto flex items-center justify-start">
+                        <div className="relative h-14 md:h-16 w-auto flex items-center justify-start">
                             <img
                                 src="/logo-update.png"
                                 alt="AF Persianas Logo"
