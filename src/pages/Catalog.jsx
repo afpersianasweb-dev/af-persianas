@@ -75,7 +75,7 @@ const Catalog = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row justify-center gap-6 max-w-4xl mx-auto px-4">
                     <a
-                        href="/catalogo/Catalogo%20linea%20inyectada.pdf"
+                        href="/catalogos/Catalogo%20linea%20inyectada.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group flex flex-1 items-center justify-center p-6 bg-white border border-neutral-200 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] active:scale-95 text-neutral-800 hover:border-primary"
@@ -91,7 +91,7 @@ const Catalog = () => {
                     </a>
 
                     <a
-                        href="/catalogo/Catalogo%20Sombrillas.pdf"
+                        href="/catalogos/Catalogo%20Sombrillas.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group flex flex-1 items-center justify-center p-6 bg-white border border-neutral-200 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] active:scale-95 text-neutral-800 hover:border-secondary"
