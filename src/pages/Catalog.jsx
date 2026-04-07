@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Download, FileText } from 'lucide-react';
+import OptimizedImage from '../components/OptimizedImage';
 import Section from '../components/Section';
 import { useCatalog } from '../context/CatalogContext';
 
@@ -40,16 +41,13 @@ const Catalog = () => {
                         to={`/catalogo/${cat.id}`}
                         className="group relative flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm md:hover:shadow-2xl md:hover:-translate-y-2 transition-all duration-500 ease-out border border-neutral-100"
                     >
-                        <div className="relative aspect-[4/3] overflow-hidden">
-                            <img
-                                src={cat.images && cat.images.length > 0 ? cat.images[0] : '/placeholder.jpg'}
-                                alt={cat.name}
-                                className="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-110"
-                                onError={(e) => {
-                                    e.target.src = 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80';
-                                }}
-                            />
-                        </div>
+                        <OptimizedImage
+                            src={cat.images && cat.images.length > 0 ? cat.images[0] : '/placeholder.jpg'}
+                            alt={cat.name}
+                            className="transition-transform duration-700 md:group-hover:scale-110"
+                            containerClassName=""
+                            aspectRatio="4/3"
+                        />
                         <div className="p-8">
                             <h3 className="text-2xl font-bold text-neutral-900 mb-3 group-hover:text-secondary transition-colors">
                                 {cat.name}
