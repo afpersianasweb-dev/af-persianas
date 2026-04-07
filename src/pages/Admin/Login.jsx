@@ -20,7 +20,7 @@ const Login = () => {
         try {
             await login(password);
             navigate('/admin/dashboard');
-        } catch (err) {
+        } catch {
             setError('Credenciales incorrectas');
         } finally {
             setLoading(false);

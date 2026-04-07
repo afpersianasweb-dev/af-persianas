@@ -185,7 +185,7 @@ const Home = () => {
                             key={idx}
                             whileHover={{ y: -5 }}
                             onClick={() => window.location.href = `/catalogo/${cat.id}`}
-                            className="bg-neutral-50 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 border border-neutral-100 group cursor-pointer overflow-hidden relative"
+                            className="bg-neutral-50 rounded-2xl shadow-sm transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl p-8 border border-neutral-100 group cursor-pointer overflow-hidden relative"
                         >
                             <h3 className="text-2xl font-bold text-neutral-800 mb-3 group-hover:text-primary transition-colors relative z-10">{cat.name}</h3>
                             <p className="text-neutral-500 text-sm mb-6 line-clamp-3 relative z-10">{cat.desc}</p>

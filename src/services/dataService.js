@@ -38,7 +38,6 @@ export const dataService = {
             const isInvalidVersion = !Array.isArray(parsed) || parsed.length !== 10 || (parsed.length > 0 && !parsed[0].images);
 
             if (isInvalidVersion) {
-                console.log("Detectada versión antigua o corrupta del catálogo. Reseteando a versión 10 productos...");
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(initialCategories));
                 return initialCategories;
             }

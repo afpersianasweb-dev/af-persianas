@@ -37,7 +37,7 @@ const Catalog = () => {
                     <Link
                         key={cat.id}
                         to={`/catalogo/${cat.id}`}
-                        className="group relative flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-neutral-100"
+                        className="group relative flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out border border-neutral-100"
                     >
                         <div className="relative aspect-[4/3] overflow-hidden">
                             <img

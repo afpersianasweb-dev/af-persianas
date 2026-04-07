@@ -14,7 +14,7 @@ export const useContentProtection = (enabled = true) => {
             }
         };
 
-        const handleKeyDown = (e) => {
+        const handleKeyDown = () => {
             // Optional: Block specific shortcuts if needed
             // if (e.ctrlKey && (e.key === 'u' || e.key === 's')) {
             //     e.preventDefault();

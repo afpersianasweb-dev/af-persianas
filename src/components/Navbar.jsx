@@ -73,11 +73,15 @@ const Navbar = () => {
                                 key={link.name}
                                 to={link.path}
                                 className={clsx(
-                                    "text-sm font-medium transition-colors hover:text-secondary",
-                                    location.pathname === link.path ? "text-secondary" : (scrolled ? "text-neutral-700" : "text-white")
+                                    "relative text-sm font-medium transition-colors group py-1",
+                                    location.pathname === link.path ? "text-secondary" : (scrolled ? "text-neutral-700 hover:text-secondary" : "text-white hover:text-secondary")
                                 )}
                             >
                                 {link.name}
+                                <span className={clsx(
+                                    "absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-secondary transition-all duration-300",
+                                    location.pathname === link.path ? "w-full" : "w-0 group-hover:w-full"
+                                )}></span>
                             </Link>
                         ))}
                     </div>
